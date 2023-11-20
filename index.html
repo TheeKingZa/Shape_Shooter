@@ -2,15 +2,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Game</title>
+    <title>Shape Shooter</title>
+    <link rel="stylesheet" href="theme.css">
 </head>
 <body>
     <!-- Your game canvas or other HTML elements -->
 
+    <div id="game-container">
+        <canvas id="game-canvas" width="800" height="600"></canvas>
+    </div>
+
     <!-- Import your scripts in the correct order -->
-    <script type="module" src="./js/player.js"></script>
     <script type="module" src="./js/bullet.js"></script>
     <script type="module" src="./js/enemy.js"></script>
     <script type="module" src="./js/main.js"></script>
+    <script type="module" src="./js/player.js"></script>
+    
+    
 </body>
 </html>
