@@ -1,5 +1,9 @@
 # Learning Canvas in html, js
 
+html -> canvas.css
+html2 -> canvas2.css
+
+
 1. [Creating and Resizing](https://www.youtube.com/watch?v=EO6OkltgudE&list=PLpPnRKq7eNW3We9VdCfx9fprhqXHwTPXL&index=1)
 	# Four Essential Skills for Any HTML5 Canvas Piece:
 		* Creating and Resizing Your Canvas
