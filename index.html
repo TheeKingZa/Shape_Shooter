@@ -1,29 +1,13 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shape Shooter</title>
-    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="theme.css">
+    <title>Arrow Game</title>
 </head>
 <body>
-    <!-- Your game canvas or other HTML elements -->
-
-    <div id="pauseScreen" style="display: none;">
-        <button id="resumeButton">Resume</button>
-        <button id="exitButton">Exit Game</button>
-    </div>
-
-    <canvas id="gameCanvas"></canvas>
-    <button id="startButton">Start Game</button>
-    
-    <p id="score">Score: 0</p>
-    <p id="gameOver" style="display: none;">Game Over</p>
-
-    <!-- Import your scripts in the correct order -->
-    <script type="module" src="./js/bullet.js"></script>
-    <script type="module" src="./js/enemy.js"></script>
-    <script type="module" src="./js/screenHandling.js"></script>
-    <script type="module" src="./js/main.js"></script>
-    <script type="module" src="./js/player.js"></script>
+    <canvas id="gameCanvas" width="800" height="600"></canvas>
+    <script src="game.js"></script>
 </body>
 </html>

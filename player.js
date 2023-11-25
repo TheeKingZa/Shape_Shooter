@@ -1,4 +1,6 @@
 // player.js
-function handlePlayerMovement(playerElement) {
-    // Code to handle player movement
-}
+export const player = {
+    x: 50,
+    y: 50,
+    speed: 5,
+};

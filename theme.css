@@ -1,17 +1,10 @@
-
 body {
     margin: 0;
-    overflow: hidden;
+    overflow: hidden; /* This line hides the scroll bars */
 }
 
-#game-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+canvas {
     background-color: #f0f0f0;
-}
-
-#game-canvas {
-    border: 2px solid #000;
+    display: block;
+    margin: auto;
 }
