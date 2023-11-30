@@ -57,34 +57,72 @@ c.stroke();
 } */
 
 // Caps on fuction to indicate its a Obj
-function Circle(){
+function Circle(x, y, dx, dy, radius){
     this.x = x;
     this.y = y;
+    this.dx = dx;
+    this.dy = dy;
+    this.radius = radius;
 
     this.draw = function ()
     {
           // Arc / CIrcle
     c.beginPath();
-    c.arc(x, y, 30, 0, Math.PI * 2, false);
+    c.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
     c.strokeStyle = 'black';
     c.stroke();
 
     }
+
+    this.update = function()
+    {
+         // Right/left onCollosion
+    if (this.x + this.radius > inWidth || this.x - this.radius < 0)
+    {
+        // Switch to Negative
+        this.dx = -this.dx;
+    }
+
+    // Top/Down
+    if (this.y + this.radius > inHeight || this.y - this.radius < 0)
+    {
+        this.dy = -this.dy;
+    }
+    
+   
+    // moving per/px
+    this.x += this.dx;
+    this.y += this.dy;
+
+    this.draw();
+    }
 }
 
-var circle = new Circle(200, 200);
-circle.draw();
-// Moving Our Elements
+/* 
+*/
 
+var circleArray = [];
 
-// for random actions/Value
+for(var i = 0; i < 100; i++)
+{
+    // for random actions/Value
 var x = Math.random() * inWidth;
 var y = Math.random() * inHeight;
 // math arithimatic
 var dx = (Math.random() - 0.5) * 5;
 var dy = (Math.random() - 0.5)* 5;
 var radius = 30;
+    // Do something
+    var circle = new Circle(200, 200, 3, 3, 30);
+    circleArray.push(new Circle(x, y, dx, dy, radius))
 
+}
+
+ 
+
+
+
+    circle.draw( );
 // Animate
 // Infinite Loop.
 // Debug.log(to see if its responding.)
@@ -97,31 +135,12 @@ function animate() {
     // clearing all the created circles in process
     c.clearRect(0, 0, inWidth, inHeight);
     
-circle.draw();
-    
-    // Arc / CIrcle
-    c.beginPath();
-    c.arc(x, y, 30, 0, Math.PI * 2, false);
-    c.strokeStyle = 'black';
-    c.stroke();
-
-    // Right/left onCollosion
-    if (x + radius > inWidth || x - radius < 0)
-    {
-        // Switch to Negative
-        dx = -dx;
-    }
-
-    // Top/Down
-    if (y + radius > inHeight || y - radius < 0)
-    {
-        dy = -dy;
+    // iterate thru the circleArray
+    for (var i = 0; i < circleArray.length; i++){
+        circleArray[i].update();
     }
     
-   
-    // moving per/px
-    x += dx;
-    y += dy;
+
 }
 
    
